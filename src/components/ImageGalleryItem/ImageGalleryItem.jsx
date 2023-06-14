@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Modal } from "../Modal/Modal";
 import styles from "./ImageGalleryItem.module.css";
+import PropTypes from "prop-types";
 
 export const ImageGalleryItem = ({ id, smallImgURL, largeImgURL }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -21,6 +22,11 @@ export const ImageGalleryItem = ({ id, smallImgURL, largeImgURL }) => {
       <Modal toggler={modalIsOpen} largeImageURL={largeImgURL} />
     </>
   );
+};
+
+ImageGalleryItem.propTypes = {
+  id: PropTypes.number.isRequired,
+  smallImgURL: PropTypes.string.isRequired,
 };
 
 // export class ImageGalleryItem extends Component {
