@@ -4,6 +4,7 @@ import { ImageGallery } from "./ImageGallery/ImageGallery";
 import { Loader } from "./Loader/Loader";
 import { Button } from "./Button/Button";
 import { getGallery } from "../api/getGallery";
+import styles from "./App.module.css";
 
 export const App = () => {
   const [query, setQuery] = useState("");
@@ -59,6 +60,9 @@ export const App = () => {
     <div className="container">
       <Searchbar onSubmit={submitQuery} />
       <ImageGallery images={gallery} />
+      {gallery.length === 0 && (
+        <div className={styles.noImages}>Sorry no Images Found</div>
+      )}
       {totalImages > gallery.length && <Button onLoadMore={handleLoadMore} />}
       {isLoading && <Loader />}
     </div>

@@ -1,15 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import FsLightbox from "fslightbox-react";
 
-export class Modal extends Component {
-  render() {
-    return (
-      <>
-        <FsLightbox
-          toggler={this.props.toggler}
-          sources={[`${this.props.largeImageURL}`]}
-        />
-      </>
-    );
-  }
-}
+export const Modal = ({ toggler, largeImageURL }) => {
+  return (
+    <>
+      <FsLightbox toggler={toggler} sources={[`${largeImageURL}`]} />
+    </>
+  );
+};

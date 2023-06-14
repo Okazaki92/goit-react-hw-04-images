@@ -6,7 +6,6 @@ export const getGallery = async (query, page = 1) => {
   const API_KEY = process.env.REACT_APP_API_KEY;
 
   try {
-    console.log(process.env);
     const response = await axios.get(
       `?q=${query}&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`
     );
