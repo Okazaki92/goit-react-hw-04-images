@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { nanoid } from "nanoid";
 import { ImageGalleryItem } from "../ImageGalleryItem/ImageGalleryItem";
 import styles from "./ImageGallery.module.css";
